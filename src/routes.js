@@ -3,26 +3,25 @@
 import React, { lazy } from 'react';
 import { Redirect } from 'react-router-dom';
 
-import Produto from './screens/produto';
-import Home from './screens/home';
+import Home from './screens/Home';
 
 const routes = [
-  {
-    path: '/',
-    exact: true,
-    component: () => <Redirect to="/home" />
-  },
-  {
-    route: '*',
-    component: Home,
-    routes: [
-      {
-        path: '/home',
+    {
+        path: '/',
         exact: true,
-        component: Produto
-      },
-    ]
-  }
+        component: () => <Redirect to="/home" />
+    },
+    {
+        route: '*',
+        component: Home,
+        routes: [
+            {
+                path: '/home',
+                exact: true,
+                component: Home
+            }
+        ]
+    }
 ];
 
 export default routes;
