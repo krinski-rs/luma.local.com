@@ -61,7 +61,11 @@ const Home = props => {
                     onMobileClose={handleNavBarMobileClose}
                     openMobile={openNavBarMobile}
                 />
-                Ola que tal
+                <main className={classes.content}>
+                    <Suspense fallback={<LinearProgress />}>
+                        {renderRoutes(route.routes)}
+                    </Suspense>
+                </main>
             </div>
         </div>
     );

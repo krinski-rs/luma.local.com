@@ -4,6 +4,7 @@ import React, { lazy } from 'react';
 import { Redirect } from 'react-router-dom';
 
 import Home from './screens/Home';
+import Dashboard from './views/home/Dashboard';
 
 const routes = [
     {
@@ -18,7 +19,17 @@ const routes = [
             {
                 path: '/home',
                 exact: true,
-                component: Home
+                component: Dashboard
+            },
+            {
+                path: '/user/list',
+                exact: true,
+                component: lazy(() => import('./views/user/UserList'))
+            },
+            {
+                path: '/user/create',
+                exact: true,
+                component: lazy(() => import('./views/user/UserCreate'))
             }
         ]
     }
